@@ -1,9 +1,12 @@
 #![deny(warnings)]
 #![deny(clippy::all)]
 #![forbid(unsafe_code)]
+#![cfg_attr(not(feature = "std"), no_std)]
 
 #[macro_use]
 extern crate bitflags;
+#[macro_use]
+extern crate alloc;
 extern crate cesu8;
 
 #[macro_use]
@@ -15,10 +18,12 @@ pub mod constant_pool;
 pub mod descriptor;
 pub mod names;
 
-use std::borrow::Cow;
-use std::collections::HashSet;
-use std::ops::Deref;
-use std::rc::Rc;
+use alloc::borrow::Cow;
+use alloc::rc::Rc;
+use alloc::string::ToString;
+use alloc::vec::Vec;
+use core::ops::Deref;
+use hashbrown::HashSet;
 
 use crate::attributes::{read_attributes, AttributeData, AttributeInfo};
 use crate::constant_pool::{

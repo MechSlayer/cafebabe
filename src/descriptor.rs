@@ -1,10 +1,10 @@
 #![allow(clippy::ptr_arg)]
 
-use std::{
-    borrow::Cow,
-    fmt::{self, Write},
-    str::CharIndices,
-};
+use alloc::borrow::Cow;
+use alloc::vec::Vec;
+use core::fmt::{self, Write};
+use core::str::CharIndices;
+use alloc::string::ToString;
 
 use crate::ParseError;
 

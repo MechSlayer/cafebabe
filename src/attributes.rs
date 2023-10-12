@@ -1,6 +1,8 @@
-use std::borrow::Cow;
-use std::ops::Deref;
-use std::rc::Rc;
+use alloc::borrow::Cow;
+use alloc::rc::Rc;
+use alloc::string::ToString;
+use alloc::vec::Vec;
+use core::ops::Deref;
 
 use crate::bytecode::ByteCode;
 use crate::constant_pool::{

@@ -1,4 +1,4 @@
-use std::str::Chars;
+use core::str::Chars;
 
 pub(crate) fn is_binary_name(name: &str) -> bool {
     for segment in name.split('/') {

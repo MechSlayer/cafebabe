@@ -1,4 +1,6 @@
-use std::fmt;
+use core::fmt;
+
+use alloc::{string::String, vec::Vec};
 
 macro_rules! err {
     ($base:ident, $msg:literal) => {
@@ -75,4 +77,5 @@ impl fmt::Display for ParseError {
     }
 }
 
+#[cfg(feature = "std")]
 impl std::error::Error for ParseError {}

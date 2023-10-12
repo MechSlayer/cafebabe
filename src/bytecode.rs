@@ -1,6 +1,8 @@
-use std::borrow::Cow;
-use std::convert::TryFrom;
-use std::rc::Rc;
+use alloc::borrow::Cow;
+use alloc::rc::Rc;
+use alloc::string::ToString;
+use alloc::vec::Vec;
+use core::convert::TryFrom;
 
 use crate::constant_pool::{
     get_cp_loadable, read_cp_classinfo, read_cp_invokedynamic, read_cp_memberref,
